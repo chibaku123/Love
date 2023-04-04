@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <style>
+        h3{
+            background:#3d3d3d;
+         font-size:24px;
+         font-weight:bold;
+	 -webkit-animation: my 700ms infinite;
+	 -moz-animation: my 700ms infinite; 
+	 -o-animation: my 700ms infinite; 
+	 animation: my 700ms infinite;
+     text-align: center;
+        }
+        .troll{
+            text-align: center;
+            position: relative;
+            
+            
+            height: 100px;
+            
+        }
+        body{
+            width: 1000px;
+            height: 1000px;
+            margin: 0 auto;
+            background-color: beige;
+        }
+        button{
+            height: 30px;
+            width: 50px;
+            color: red;
+            position: relative;
+        }
+        @-webkit-keyframes my {
+	 0% { color: #F8CD0A; } 
+	 50% { color: #fff;  } 
+	 100% { color: red;  } 
+  }
+         @-moz-keyframes my { 
+	 0% { color: #F8CD0A;  } 
+	 50% { color: #fff;  }
+	 100% { color: red;  } 
+ }
+ @-o-keyframes my { 
+	 0% { color: #F8CD0A; } 
+	 50% { color: #fff; } 
+	 100% { color: red;  } 
+ }
+ @keyframes my { 
+	 0% { color: #F8CD0A;  } 
+	 50% { color: #fff;  }
+	 100% { color: red;  } 
+ } 
+ .image{
+    display: flex;
+    justify-content: space-between;
+ }
+ img{
+    width: 258px;
+    height: 223px;
+ }
+ 
+    </style>
+</head>
+<body>
+    <h3> Em có thích anh hay không ?</h3>
+    <div>
+        <div class="troll">
+        
+        
+        </div>
+        <div class="image">
+            <div id="anh">
+    
+            </div>
+            <div id="anh1">
+    
+            </div>
+    
+        </div>
+    </div>
+    <audio autoplay loop>
+        <source src="../music/YeU 5  Rhymastic.mp3">
+    </audio>
+    
+    
+    
+    <script>
+        const troll = document.querySelector('.troll');
+        
+        function chay(button){
+        const yes = document.createElement("button");
+        const no = document.createElement("button");
+        const game = {
+            timer: 0,
+            start: null
+        };
+            yes.classList.add('troll2');
+            yes.textContent = 'No';
+            troll.append(yes);
+            no.classList.add('troll1');
+            no.setAttribute("onclick", "no(this)");
+            no.textContent = 'Yes'
+            troll.append(no);
+
+        function Crush(){
+                // yes.style.display = "block";
+                
+               
+            };
+            yes.addEventListener('mouseover', () =>{
+                yes.style.left = random(450) + 'px';
+                yes.style.top = random(450) + 'px' ;
+                
+            game.timer = setTimeout(Crush , random(100));
+            
+        })
+            Crush();
+            
+        }
+           
+            
+    
+        
+        chay();
+        function random(max){
+            return Math.floor(Math.random()*max)
+            
+        }
+        function no(){
+            var node = document.getElementById('anh');
+            var node1 = document.getElementById('anh1');
+
+            node.innerHTML = "<img src='/img/cat.gif'>"
+            node1.innerHTML = "<img src='/img/meme.gif'>"
+            
+            alert(' Anh biết mà anh cũng vậy')
+            setInterval(function (){
+                window.location = "https://www.facebook.com/kvedem2/"
+            },3000)
+            
+        }
+
+        
+
+    </script>
+</body>
+</html>
